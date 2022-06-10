@@ -1,5 +1,7 @@
 package com.hiwei.test.agent;
 
+import com.hiwei.test.agent.utils.StringUtils;
+
 import java.io.*;
 import java.lang.instrument.Instrumentation;
 import java.nio.charset.StandardCharsets;
@@ -16,11 +18,13 @@ public class DemoAgent {
             FileInputStream file = new FileInputStream(arg);
             BufferedReader rd = new BufferedReader(new InputStreamReader(file, StandardCharsets.UTF_8));
             String configStr = readToString(rd);
-            MockConfig.parseConfig(configStr);
+            if(StringUtils.isNotEmpty(configStr)){
+                MockConfig.parseConfig(configStr);
+                instrumentation.addTransformer(new DemoTransformer());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        instrumentation.addTransformer(new DemoTransformer());
     }
     private static String readToString(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
