@@ -1,0 +1,6 @@
+{
+  "com.hiwei.test.DemoService":{
+    "add":"a*b",
+    "delete":"\"mock delete\""
+  }
+}
