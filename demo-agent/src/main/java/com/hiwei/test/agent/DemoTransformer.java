@@ -23,7 +23,7 @@ public class DemoTransformer implements ClassFileTransformer {
                     String mName = m.getName();
                     Object mockData = MockConfig.getMockData(realClassName, mName);
                     if(mockData!=null){
-                        String mock = String.format("if(true){ return %s ;}", mockData);
+                        String mock = String.format("if(true){ %s}", mockData);
                         m.insertBefore(mock);
                     }
                 }

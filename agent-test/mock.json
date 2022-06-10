@@ -1,6 +1,7 @@
 {
   "com.hiwei.test.DemoService":{
-    "add":"a*b",
-    "delete":"\"mock delete\""
+    "add":"return 123;",
+    "delete":"return \"mock delete\";",
+    "getUser": "com.hiwei.test.User user2 = new com.hiwei.test.User();return user2;"
   }
 }
