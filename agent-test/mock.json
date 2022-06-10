@@ -3,8 +3,5 @@
     "add":"return 123;",
     "delete":"return \"mock delete\";",
     "getUser": "com.hiwei.test.User user2 = new com.hiwei.test.User();return user2;"
-  },
-  "com.alibaba.translation.mds.controller.resource.PublishOrderController": {
-    "getOrderById": "return null;"
   }
 }
